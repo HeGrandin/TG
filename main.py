@@ -1,3 +1,4 @@
+import os
 import logging
 from datetime import datetime, timedelta, time
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
@@ -9,8 +10,8 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Замените 'YOUR_TOKEN' на токен вашего бота
-TOKEN = 'YOUR_TELEGRAM_BOT_TOKEN'
+# Читаем токен из переменной окружения
+TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 
 # Дата события (например, 31 декабря 2023 года)
 EVENT_DATE = datetime(2027, 3, 28)
